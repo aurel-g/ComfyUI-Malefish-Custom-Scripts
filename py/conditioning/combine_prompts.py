@@ -10,10 +10,10 @@ from dynamicprompts.enums import SamplingMethod
 from dynamicprompts.generators import RandomPromptGenerator
 from dynamicprompts.wildcards.wildcard_manager import WildcardManager
 import re
+from ..utils import get_model_dir
 
 logger = logging.getLogger(__name__)
-wildcardManager = WildcardManager(
-    Path(folder_paths.get_folder_paths("wildcards")[0]))
+wildcardManager = WildcardManager(Path(get_model_dir("wildcards")))
 
 
 class CombinePrompts(ABC):
